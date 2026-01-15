@@ -1,6 +1,6 @@
 #!/bin/bash
 # VRCI Platform Stop Script
-# Contact: admin@gy4k.com
+# Authors: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan | Contact: admin@gy4k.com
 
 # Colors
 RED='\033[0;31m'

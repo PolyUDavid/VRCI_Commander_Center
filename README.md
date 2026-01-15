@@ -9,7 +9,10 @@
 This repository contains the complete experimental platform for validating the feasibility of decentralized Vehicle-Road-Cloud Integration (VRCI) systems, as presented in our research paper:
 
 > **"Decentralizing Vehicle-Road-Cloud Integration: A Feasibility Study with AI-Enhanced Validation Platform and Sustainability Assessment"**  
-> *Research Paper*
+> 
+> **Authors**: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan  
+> **Institutions**: The Hong Kong Polytechnic University; 小马科技  
+> **Contact**: admin@gy4k.com
 
 The platform integrates five state-of-the-art deep learning models with mathematical feasibility analysis to provide quantitative validation of:
 - **67.3% latency reduction** (centralized vs. decentralized architectures)
@@ -651,14 +654,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-**Author**: [Your Name]  
+**Authors**: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan  
+**Institutions**: The Hong Kong Polytechnic University; 小马科技  
 **Email**: admin@gy4k.com  
-**Institution**: [Your Institution]  
-**Paper**: [Link to paper when published]
+**GitHub**: https://github.com/PolyUDavid/VRCI_Commander_Center
 
 For questions, issues, or collaboration inquiries, please:
 1. Open an issue on GitHub: [Issues](https://github.com/PolyUDavid/VRCI_Commander_Center/issues)
-2. Email: admin@gy4k.com
+2. Email us at: admin@gy4k.com
 3. Discussion forum: [Discussions](https://github.com/PolyUDavid/VRCI_Commander_Center/discussions)
 
 ---

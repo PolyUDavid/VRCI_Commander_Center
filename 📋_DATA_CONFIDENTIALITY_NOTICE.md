@@ -236,5 +236,5 @@ Similar approaches in published research:
 
 **Document Version**: 1.0.0  
 **Last Updated**: January 15, 2026  
-**Maintained By**: VRCI Research Team  
+**Maintained By**: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan  
 **Contact**: admin@gy4k.com

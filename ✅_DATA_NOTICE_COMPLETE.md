@@ -307,5 +307,5 @@ All files have been updated with appropriate data confidentiality notices. The r
 **Document Created**: January 15, 2026  
 **Last Verification**: January 15, 2026  
 **Version**: 1.0.0  
-**Author**: VRCI Research Team  
+**Author**: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan  
 **Contact**: admin@gy4k.com

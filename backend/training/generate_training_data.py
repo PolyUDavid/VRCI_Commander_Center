@@ -27,7 +27,7 @@ For questions about data generation methodology:
 Contact: admin@gy4k.com
 ===========================================
 
-Author: VRCI Research Team
+Authors: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan
 Contact: admin@gy4k.com
 """
 

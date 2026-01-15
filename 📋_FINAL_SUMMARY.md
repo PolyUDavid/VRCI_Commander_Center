@@ -388,6 +388,6 @@ git push -u origin main
 
 ---
 
-**VRCI Research Team**  
+**NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan**  
 **Email**: admin@gy4k.com  
 **GitHub**: https://github.com/YOUR_USERNAME/vrci-platform

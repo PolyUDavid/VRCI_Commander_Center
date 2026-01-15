@@ -2,7 +2,7 @@
 Latency-LSTM Enhanced Model
 Predicts CCC and DEC latency for VRCI systems
 
-Author: VRCI Research Team
+Authors: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan
 Contact: admin@gy4k.com
 """
 

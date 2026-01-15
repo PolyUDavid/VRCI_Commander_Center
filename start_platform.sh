@@ -1,7 +1,7 @@
 #!/bin/bash
 # VRCI Platform Startup Script
 # Author: VRCI Research Team
-# Contact: admin@gy4k.com
+# Authors: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan | Contact: admin@gy4k.com
 # Version: 1.0.0
 
 set -e  # Exit on error
@@ -17,7 +17,7 @@ echo -e "${BLUE}╔════════════════════�
 echo -e "${BLUE}║         VRCI Platform Startup Script v1.0.0               ║${NC}"
 echo -e "${BLUE}║    Decentralized Vehicle-Road-Cloud Integration           ║${NC}"
 echo -e "${BLUE}║                                                            ║${NC}"
-echo -e "${BLUE}║    Contact: admin@gy4k.com                                 ║${NC}"
+echo -e "${BLUE}║    Authors: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan | Contact: admin@gy4k.com                                 ║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
 echo ""
 

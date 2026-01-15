@@ -2,7 +2,7 @@
 Carbon-LightTS Model
 10-year carbon lifecycle prediction
 
-Author: VRCI Research Team
+Authors: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan
 Contact: admin@gy4k.com
 """
 

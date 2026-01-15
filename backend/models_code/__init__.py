@@ -2,7 +2,7 @@
 VRCI Models Package
 All 5 AI models for VRCI feasibility validation
 
-Author: VRCI Research Team
+Authors: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan
 Contact: admin@gy4k.com
 """
 

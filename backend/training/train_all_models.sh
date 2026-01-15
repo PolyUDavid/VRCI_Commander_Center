@@ -1,6 +1,6 @@
 #!/bin/bash
 # Train all 5 VRCI models
-# Contact: admin@gy4k.com
+# Authors: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan | Contact: admin@gy4k.com
 
 echo "🚀 VRCI Model Training Pipeline"
 echo "==============================="

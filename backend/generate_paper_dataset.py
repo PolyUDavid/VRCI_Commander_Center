@@ -2,7 +2,7 @@
 VRCI Paper Dataset Generator
 Generates 2000 samples matching paper metrics for reproducibility
 
-Author: VRCI Research Team
+Authors: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan
 Contact: admin@gy4k.com
 Date: January 15, 2026
 """

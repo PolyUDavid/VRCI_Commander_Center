@@ -379,5 +379,7 @@ logging:
 # ============================================================================
 
 contact:
+  authors: "NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan"
+  institutions: "The Hong Kong Polytechnic University; 小马科技"
   email: "admin@gy4k.com"
   github: "https://github.com/PolyUDavid/VRCI_Commander_Center"

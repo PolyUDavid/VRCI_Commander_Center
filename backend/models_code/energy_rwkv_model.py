@@ -2,7 +2,7 @@
 Energy-RWKV Enhanced Model
 Predicts energy consumption for CCC and DEC with learned power exponent
 
-Author: VRCI Research Team
+Authors: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan
 Contact: admin@gy4k.com
 """
 

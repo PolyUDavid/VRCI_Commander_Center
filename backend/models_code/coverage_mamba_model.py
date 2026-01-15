@@ -2,7 +2,7 @@
 Coverage-Mamba-3 Model
 Multi-modal sensor fusion with Mamba-3 architecture
 
-Author: VRCI Research Team
+Authors: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan
 Contact: admin@gy4k.com
 """
 

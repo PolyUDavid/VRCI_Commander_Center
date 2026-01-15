@@ -4,7 +4,7 @@
 
 This repository contains the complete experimental validation platform for **Decentralized Vehicle-Road-Cloud Integration (VRCI)** systems, developed to support the research paper in academic review.
 
-**Author**: VRCI Research Team  
+**Author**: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan  
 **Contact**: admin@gy4k.com  
 **Version**: 1.0.0  
 **Date**: January 15, 2026  

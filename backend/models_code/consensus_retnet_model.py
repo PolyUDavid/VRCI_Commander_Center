@@ -2,7 +2,7 @@
 Consensus-RetNet Model
 Selects optimal consensus mechanism (PBFT/DPoS/PoS/PoW)
 
-Author: VRCI Research Team
+Authors: NOK KO, Ma Zhiqin, Wei Zixian, Yu Changyuan
 Contact: admin@gy4k.com
 """
 
