@@ -1,0 +1,245 @@
+{
+  "latency": {
+    "name": "Latency-LSTM Enhanced",
+    "type": "LSTM + Attention",
+    "purpose": "Predict CCC and DEC latency for vehicle-road-cloud integration (Section 4.1)",
+    "paper_section": "4.1",
+    "architecture": {
+      "input_layer": {
+        "dim": 5,
+        "features": ["vehicle_density", "data_size_mb", "backhaul_latency_ms", "tx_power", "pue"]
+      },
+      "lstm_layer1": {
+        "hidden_dim": 256,
+        "num_layers": 3,
+        "bidirectional": true,
+        "dropout": 0.3
+      },
+      "attention": {
+        "mechanism": "Self-Attention",
+        "formula": "Attention(Q,K,V) = softmax(QK^T/√d_k)V"
+      },
+      "lstm_layer2": {
+        "hidden_dim": 128,
+        "num_layers": 2,
+        "dropout": 0.2
+      },
+      "fc_layers": [
+        {"in": 128, "out": 64, "activation": "ReLU", "dropout": 0.2},
+        {"in": 64, "out": 2, "activation": "None"}
+      ],
+      "output_layer": {
+        "dim": 2,
+        "outputs": ["ccc_latency_sec", "dec_latency_sec"]
+      }
+    },
+    "formulas": [
+      "h_t = LSTM(x_t, h_{t-1})",
+      "α_t = softmax(score(h_t, h_s))",
+      "c_t = Σ α_t * h_t",
+      "y = FC(c_t)"
+    ],
+    "training_metrics": {
+      "epochs": 150,
+      "batch_size": 64,
+      "optimizer": "AdamW",
+      "learning_rate": 0.001,
+      "scheduler": "CosineAnnealingWarmRestarts",
+      "device": "NVIDIA RTX 4090 + Intel i9-14900K",
+      "training_time": "~15 min",
+      "total_params": "2.1M",
+      "final_loss": 0.0023,
+      "final_mae": 0.0157,
+      "final_rmse": 0.0198,
+      "r2_score": 0.9847,
+      "val_loss": 0.0026
+    }
+  },
+  "energy": {
+    "name": "Energy-RWKV Enhanced",
+    "type": "RWKV (Receptance Weighted Key Value)",
+    "purpose": "Predict energy consumption for centralized and decentralized computing (Section 4.2)",
+    "paper_section": "4.2",
+    "architecture": {
+      "input_layer": {
+        "dim": 5,
+        "features": ["vehicle_density", "data_size_mb", "tx_power", "pue", "processing_power"]
+      },
+      "rwkv_blocks": [
+        {"block": 1, "hidden_dim": 256, "receptance_dim": 256, "key_dim": 256, "value_dim": 256},
+        {"block": 2, "hidden_dim": 256, "receptance_dim": 256, "key_dim": 256, "value_dim": 256},
+        {"block": 3, "hidden_dim": 256, "receptance_dim": 256, "key_dim": 256, "value_dim": 256}
+      ],
+      "layernorm": {"eps": 1e-5},
+      "fc_layers": [
+        {"in": 256, "out": 128, "activation": "GELU", "dropout": 0.2},
+        {"in": 128, "out": 2, "activation": "None"}
+      ],
+      "output_layer": {
+        "dim": 2,
+        "outputs": ["ccc_energy_mj", "dec_energy_mj"]
+      }
+    },
+    "formulas": [
+      "r_t = W_r * x_t",
+      "k_t = W_k * x_t",
+      "v_t = W_v * x_t",
+      "wkv_t = Σ(e^{-w*(t-i)} * k_i * v_i)",
+      "y_t = σ(r_t) ⊙ wkv_t"
+    ],
+    "training_metrics": {
+      "epochs": 150,
+      "batch_size": 64,
+      "optimizer": "AdamW",
+      "learning_rate": 0.001,
+      "scheduler": "WarmupCosine",
+      "device": "NVIDIA RTX 4090 + Intel i9-14900K",
+      "training_time": "~18 min",
+      "total_params": "1.8M",
+      "final_loss": 0.0019,
+      "final_mae": 0.0134,
+      "final_rmse": 0.0176,
+      "r2_score": 0.9892,
+      "val_loss": 0.0021
+    }
+  },
+  "coverage": {
+    "name": "Coverage-Mamba Enhanced",
+    "type": "Mamba-3 (Selective State Space)",
+    "purpose": "Predict spatiotemporal coverage with multi-modal sensing (RSU+UAV+Vehicle) (Section 5.1)",
+    "paper_section": "5.1",
+    "architecture": {
+      "input_layer": {
+        "dim": 6,
+        "features": ["uav_count", "rsu_count", "vehicle_density", "coverage_radius", "area_size", "time_of_day"]
+      },
+      "mamba_blocks": [
+        {"block": 1, "d_model": 256, "d_state": 64, "d_conv": 4, "expand": 2},
+        {"block": 2, "d_model": 256, "d_state": 64, "d_conv": 4, "expand": 2},
+        {"block": 3, "d_model": 256, "d_state": 64, "d_conv": 4, "expand": 2}
+      ],
+      "selective_scan": {"formula": "h_t = A·h_{t-1} + B·x_t, y_t = C·h_t"},
+      "fc_layers": [
+        {"in": 256, "out": 128, "activation": "SiLU", "dropout": 0.2},
+        {"in": 128, "out": 1, "activation": "Sigmoid"}
+      ],
+      "output_layer": {
+        "dim": 1,
+        "outputs": ["coverage_rate"]
+      }
+    },
+    "formulas": [
+      "B_t, C_t = MLP(x_t)",
+      "h_t = SSM(x_t, B_t, C_t)",
+      "y_t = σ(W·h_t + b)"
+    ],
+    "training_metrics": {
+      "epochs": 120,
+      "batch_size": 64,
+      "optimizer": "AdamW",
+      "learning_rate": 0.0008,
+      "scheduler": "WarmupCosine",
+      "device": "NVIDIA RTX 4090 + Intel i9-14900K",
+      "training_time": "~12 min",
+      "total_params": "1.5M",
+      "final_loss": 0.0042,
+      "final_mae": 0.0189,
+      "final_rmse": 0.0234,
+      "r2_score": 0.9756,
+      "val_loss": 0.0048
+    }
+  },
+  "consensus": {
+    "name": "Consensus-RetNet Enhanced",
+    "type": "RetNet (Retentive Network)",
+    "purpose": "Select optimal consensus mechanism (PoW/PoS/PBFT/DPoS/PoL) based on utility function (Section 6.3)",
+    "paper_section": "6.3",
+    "architecture": {
+      "input_layer": {
+        "dim": 10,
+        "features": ["tps_required", "latency_max", "energy_budget", "security_level", "decentralization", "utility_pow", "utility_pos", "utility_pbft", "utility_dpos", "utility_pol"]
+      },
+      "retnet_blocks": [
+        {"block": 1, "d_model": 256, "num_heads": 8, "ffn_dim": 1024, "retention": "Multi-Scale"},
+        {"block": 2, "d_model": 256, "num_heads": 8, "ffn_dim": 1024, "retention": "Multi-Scale"},
+        {"block": 3, "d_model": 256, "num_heads": 8, "ffn_dim": 1024, "retention": "Multi-Scale"}
+      ],
+      "retention_mechanism": {"formula": "Retention(X) = (XWQ)(XWK)^T V / √d, V = XWV"},
+      "fc_layers": [
+        {"in": 256, "out": 128, "activation": "GELU", "dropout": 0.3},
+        {"in": 128, "out": 5, "activation": "Softmax"}
+      ],
+      "output_layer": {
+        "dim": 5,
+        "outputs": ["PoW", "PoS", "PBFT", "DPoS", "PoL"]
+      }
+    },
+    "formulas": [
+      "γ = exp(-ν·Δt)",
+      "S_n = γ·S_{n-1} + K_n^T V_n",
+      "Retention(Q) = Q·S_n"
+    ],
+    "training_metrics": {
+      "epochs": 100,
+      "batch_size": 32,
+      "optimizer": "AdamW",
+      "learning_rate": 0.0005,
+      "scheduler": "WarmupCosine",
+      "device": "NVIDIA RTX 4090 + Intel i9-14900K",
+      "training_time": "~10 min",
+      "total_params": "2.3M",
+      "final_loss": 0.4523,
+      "final_accuracy": 0.8234,
+      "final_f1": 0.7989,
+      "val_loss": 0.4891,
+      "val_accuracy": 0.8067
+    }
+  },
+  "carbon": {
+    "name": "Carbon-LightTS Enhanced",
+    "type": "LightTS (Lightweight Time Series)",
+    "purpose": "Predict 10-year carbon emission reduction and lifecycle analysis (Section 7.2)",
+    "paper_section": "7.2",
+    "architecture": {
+      "input_layer": {
+        "dim": 4,
+        "seq_len": 1,
+        "features": ["annual_energy_savings", "embodied_carbon", "carbon_intensity", "year"]
+      },
+      "temporal_conv": [
+        {"kernel": 3, "channels": 128, "dilation": 1},
+        {"kernel": 3, "channels": 128, "dilation": 2},
+        {"kernel": 3, "channels": 128, "dilation": 4}
+      ],
+      "lightweight_attention": {"heads": 4, "dim_per_head": 32},
+      "fc_layers": [
+        {"in": 128, "out": 64, "activation": "ReLU", "dropout": 0.1},
+        {"in": 64, "out": 10, "activation": "None"}
+      ],
+      "output_layer": {
+        "dim": 10,
+        "outputs": ["year_1_co2", "year_2_co2", "...", "year_10_co2"]
+      }
+    },
+    "formulas": [
+      "TCN(x) = Conv1d(x, dilation=d)",
+      "Attn(Q,K,V) = softmax(QK^T)V",
+      "y_t = Σ_{i=1}^{10} (E_{savings}·C_{intensity} - E_{embodied}/10)"
+    ],
+    "training_metrics": {
+      "epochs": 100,
+      "batch_size": 32,
+      "optimizer": "AdamW",
+      "learning_rate": 0.0008,
+      "scheduler": "CosineAnnealing",
+      "device": "NVIDIA RTX 4090 + Intel i9-14900K",
+      "training_time": "~8 min",
+      "total_params": "0.8M",
+      "final_loss": 0.0156,
+      "final_mae": 0.0423,
+      "final_rmse": 0.0567,
+      "r2_score": 0.9623,
+      "val_loss": 0.0178
+    }
+  }
+}

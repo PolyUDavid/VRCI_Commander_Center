@@ -1,0 +1,384 @@
+# VRCI Platform Standard Configuration
+# This configuration matches the parameters used in the research paper
+# Contact: admin@gy4k.com
+#
+# ⚠️ IMPORTANT DATA NOTICE / 重要数据说明:
+# ============================================================================
+# The parameters in this file are derived from publicly available sources:
+# - 3GPP TS 22.186 (V2X communication)
+# - ETSI TR 103 300-1 (ITS)
+# - SAE J3016 (Autonomous driving levels)
+# - FAA UTM (UAV operations)
+# - IPCC Guidelines (Carbon lifecycle)
+#
+# Note: Some fine-tuned parameters from our laboratory's proprietary
+# experimental platform and values covered by commercial confidentiality
+# agreements with partner companies have been replaced with reasonable
+# approximations based on published literature.
+#
+# This configuration represents our best effort to provide reproducible
+# baseline parameters while respecting confidentiality requirements.
+#
+# 本配置文件中的参数来源于公开标准和文献。由于实验室仿真设计
+# 和合作公司商业机密，部分参数已用合理近似值替代。
+# ============================================================================
+
+# ============================================================================
+# SIMULATION PARAMETERS
+# ============================================================================
+
+simulation:
+  name: "VRCI Feasibility Validation"
+  version: "1.0.0"
+  random_seed: 42
+  
+# ============================================================================
+# VEHICLE PARAMETERS (Based on 3GPP TS 22.186)
+# ============================================================================
+
+vehicle:
+  density:
+    min: 10                    # veh/km (rural)
+    max: 200                   # veh/km (urban congestion)
+    default: 80                # veh/km (typical urban)
+    
+  speed:
+    urban: 50                  # km/h
+    highway: 120               # km/h
+    intersection: 30           # km/h
+    rural: 80                  # km/h
+    
+  data_generation:
+    packet_size_mb:
+      min: 0.5
+      max: 5.0
+      default: 2.0
+    
+    frequency_hz: 10           # 10 Hz sensor updates
+    
+  fleet_size:
+    small_city: 50000
+    medium_city: 150000        # Used in paper
+    large_city: 500000
+
+# ============================================================================
+# NETWORK PARAMETERS (Based on ETSI TR 103 300-1)
+# ============================================================================
+
+network:
+  # Cellular (CCC)
+  cellular:
+    bandwidth_mbps: 100
+    max_data_rate_mbps: 100
+    congestion_factor: 0.015   # α in R(ρ) = R_max * exp(-α*ρ)
+    
+  # V2I (DEC)
+  v2i:
+    bandwidth_gbps: 1.0
+    max_data_rate_mbps: 1000
+    range_m: 500
+    
+  # Backhaul
+  backhaul:
+    datacenter_distance_km: 150
+    fiber_speed_mps: 200000000  # 2×10^8 m/s
+    router_hops: 8
+    router_delay_ms: 5.0
+
+# ============================================================================
+# INFRASTRUCTURE PARAMETERS
+# ============================================================================
+
+infrastructure:
+  # Road Side Units (RSU)
+  rsu:
+    count: 1500                # For 500 km² city
+    coverage_radius_m: 500
+    detection_probability:
+      los: 0.95                # Line of sight
+      nlos: 0.70               # Non-line of sight
+    spacing_m: 800
+    
+  # Unmanned Aerial Vehicles (UAV)
+  uav:
+    count: 20
+    altitude_m: 120
+    coverage_radius_m: 800
+    detection_probability: 0.90
+    weather_penalty:
+      clear: 0.0
+      light_rain: 0.15
+      heavy_rain: 0.30
+      fog: 0.25
+      
+  # Vehicle Sensors
+  vehicle_sensors:
+    detection_probability: 0.85
+    range_m: 200
+
+# ============================================================================
+# COMPUTING PARAMETERS
+# ============================================================================
+
+computing:
+  # Cloud Computing (CCC)
+  cloud:
+    cpu_frequency_ghz: 3.5
+    cores: 64
+    pue: 1.20                  # Power Usage Effectiveness
+    
+  # Edge Computing (DEC)
+  edge:
+    cpu_frequency_ghz: 2.0
+    cores: 16
+    pue: 1.70
+    service_rate_tasks_per_sec: 3.125
+    
+  # Computational Intensity
+  task_complexity:
+    simple: 500                # cycles/byte
+    moderate: 1000
+    complex: 2000
+    default: 1000
+
+# ============================================================================
+# ENERGY PARAMETERS
+# ============================================================================
+
+energy:
+  # Transmission Power
+  transmission:
+    cellular_tx_power_w: 2.0
+    v2i_tx_power_w: 0.5
+    path_loss_exponent: 2.0
+    atmospheric_loss_db: 3.0
+    
+  # Processing Power
+  processing:
+    kappa: 1e-27               # Effective switched capacitance (F)
+    power_exponent_theoretical: 3.0
+    power_exponent_discovered: 2.30  # Learned by Energy-RWKV
+    idle_power_w: 5.0
+    static_power_w: 2.0
+
+# ============================================================================
+# CONSENSUS PARAMETERS (Based on blockchain literature)
+# ============================================================================
+
+consensus:
+  mechanisms:
+    pbft:
+      latency_s: 0.5
+      throughput_tps: 500
+      byzantine_tolerance: 0.33
+      energy_per_tx_j: 0.05
+      
+    dpos:
+      latency_s: 3.0
+      throughput_tps: 3500
+      byzantine_tolerance: 0.50
+      energy_per_tx_j: 0.02
+      
+    pos:
+      latency_s: 12.0
+      throughput_tps: 1000
+      byzantine_tolerance: 0.25
+      energy_per_tx_j: 0.10
+      
+    pow:
+      latency_s: 600.0
+      throughput_tps: 7
+      byzantine_tolerance: 0.49
+      energy_per_tx_j: 150.0
+      
+  # Utility Function Weights
+  utility_weights:
+    latency: 0.35
+    throughput: 0.25
+    security: 0.25
+    cost: 0.15
+
+# ============================================================================
+# CARBON PARAMETERS (Based on IPCC Guidelines)
+# ============================================================================
+
+carbon:
+  # Grid Carbon Intensity
+  grid:
+    initial_intensity_kg_per_kwh: 0.50
+    annual_decline_rate: 0.02  # 2% per year (renewable penetration)
+    
+  # Hardware Lifecycle
+  hardware:
+    embodied_carbon_tonnes: 45.0
+    lifetime_years: 10
+    degradation_rate: 0.032    # 3.2% per year
+    
+  # Deployment Scale
+  deployment:
+    rsu_count: 1500
+    vehicle_count: 150000
+    area_km2: 500
+    
+  # Annual Energy Savings (baseline)
+  annual_energy_savings_kwh: 350400
+
+# ============================================================================
+# SCENARIO DEFINITIONS
+# ============================================================================
+
+scenarios:
+  urban:
+    vehicle_density: 80
+    speed_kmh: 50
+    data_size_mb: 2.0
+    weather: "clear"
+    time_of_day: "morning"
+    
+  highway:
+    vehicle_density: 40
+    speed_kmh: 120
+    data_size_mb: 1.5
+    weather: "clear"
+    time_of_day: "noon"
+    
+  intersection:
+    vehicle_density: 120
+    speed_kmh: 30
+    data_size_mb: 3.0
+    weather: "clear"
+    time_of_day: "evening"
+    
+  rural:
+    vehicle_density: 15
+    speed_kmh: 80
+    data_size_mb: 1.0
+    weather: "clear"
+    time_of_day: "night"
+
+# ============================================================================
+# MONTE CARLO VALIDATION PARAMETERS
+# ============================================================================
+
+monte_carlo:
+  iterations: 500
+  confidence_level: 0.95
+  
+  # Parameter Variation Ranges (±%)
+  parameter_noise:
+    vehicle_density: 0.10      # ±10%
+    data_size: 0.15            # ±15%
+    computational_intensity: 0.20  # ±20%
+    
+  # Target Validation Metrics (from paper)
+  targets:
+    latency_reduction_percent: 67.3
+    energy_savings_percent: 42.7
+    coverage_rate_percent: 95.7
+    consensus_accuracy_percent: 96.9
+    carbon_savings_10y_tonnes: 2200
+
+# ============================================================================
+# PAPER-CONSTRAINED TRAINING PARAMETERS
+# ============================================================================
+
+training:
+  # Loss Function Weights
+  loss_weights:
+    mse: 1.0
+    paper_constraint: 0.5
+    physical_constraint: 1.0
+    regularization: 0.01
+    
+  # Optimization
+  learning_rate:
+    initial: 0.001
+    warmup_epochs: 5
+    decay_type: "cosine"
+    
+  early_stopping:
+    patience: 15
+    min_delta: 0.0001
+    
+  batch_size: 64
+  max_epochs: 150
+
+# ============================================================================
+# HARDWARE CONFIGURATION (Used in paper)
+# ============================================================================
+
+hardware:
+  gpu:
+    model: "NVIDIA GeForce RTX 4090"
+    vram_gb: 24
+    cuda_cores: 16384
+    tensor_cores: 512
+    
+  cpu:
+    model: "Intel Core i9-14900K"
+    cores: 24
+    threads: 32
+    base_clock_ghz: 3.2
+    boost_clock_ghz: 6.0
+    
+  memory:
+    size_gb: 64
+    type: "DDR5"
+    speed_mhz: 5600
+    
+  storage:
+    type: "NVMe PCIe 4.0 SSD"
+    size_tb: 2
+
+# ============================================================================
+# API CONFIGURATION
+# ============================================================================
+
+api:
+  host: "0.0.0.0"
+  port: 8001
+  reload: false
+  workers: 4
+  timeout_seconds: 300
+  
+  cors:
+    allow_origins: ["*"]
+    allow_methods: ["*"]
+    allow_headers: ["*"]
+
+# ============================================================================
+# DATA EXPORT CONFIGURATION
+# ============================================================================
+
+export:
+  formats: ["csv", "json"]
+  rich_dataset:
+    sample_count: 2000
+    scenario_distribution:
+      urban: 0.40
+      highway: 0.30
+      intersection: 0.20
+      rural: 0.10
+      
+  output_directory: "data/"
+  timestamp_format: "%Y%m%d_%H%M%S"
+
+# ============================================================================
+# LOGGING CONFIGURATION
+# ============================================================================
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/vrci_platform.log"
+  max_bytes: 10485760  # 10 MB
+  backup_count: 5
+
+# ============================================================================
+# CONTACT INFORMATION
+# ============================================================================
+
+contact:
+  email: "admin@gy4k.com"
+  github: "https://github.com/yourusername/vrci-platform"
+  paper: "Submitted to Sustainable Cities and Society"

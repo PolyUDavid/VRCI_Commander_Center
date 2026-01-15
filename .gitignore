@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# PyTorch
+*.pth.tar
+checkpoints/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Data (keep structure, ignore large files)
+data/*.csv
+data/*.json
+!data/DATASET_README.md
+!data/vrci_paper_dataset.json
+
+# Temporary files
+*.tmp
+*.bak
+*.cache
+
+# Model checkpoints (keep only final versions)
+backend/models/*_checkpoint_*.pth
+backend/scalers/*.tmp
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.local
