@@ -98,7 +98,7 @@ vrci-platform/
 ### 1. Installation (5 minutes)
 
 ```bash
-git clone https://github.com/yourusername/vrci-platform.git
+git clone https://github.com/PolyUDavid/VRCI_Commander_Center.git
 cd vrci-platform
 python3 -m venv venv
 source venv/bin/activate
@@ -270,7 +270,7 @@ If you use this platform in your research, please cite:
   volume={XX},
   pages={XXX-XXX},
   doi={10.1016/j.scs.2026.XXXXX},
-  note={Code and data: https://github.com/yourusername/vrci-platform}
+  note={Code and data: https://github.com/PolyUDavid/VRCI_Commander_Center}
 }
 ```
 
@@ -285,8 +285,8 @@ If you use this platform in your research, please cite:
 - **API Reference**: `http://localhost:8001/docs` (after starting)
 
 ### Community
-- **GitHub Issues**: https://github.com/yourusername/vrci-platform/issues
-- **Discussions**: https://github.com/yourusername/vrci-platform/discussions
+- **GitHub Issues**: https://github.com/PolyUDavid/VRCI_Commander_Center/issues
+- **Discussions**: https://github.com/PolyUDavid/VRCI_Commander_Center/discussions
 - **Email**: admin@gy4k.com
 
 ### Reporting Bugs
@@ -351,7 +351,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Last Updated**: January 15, 2026  
 **Platform Version**: 1.0.0  
 **Paper Status**: Submitted to *Sustainable Cities and Society*  
-**Repository**: https://github.com/yourusername/vrci-platform
+**Repository**: https://github.com/PolyUDavid/VRCI_Commander_Center
 
 ---
 

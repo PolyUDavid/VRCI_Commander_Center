@@ -309,7 +309,7 @@ If you use this dataset, please cite:
   title={VRCI Experimental Dataset: Decentralized Vehicle-Road-Cloud Integration Validation},
   author={[Your Name]},
   year={2026},
-  howpublished={\url{https://github.com/yourusername/vrci-platform}},
+  howpublished={\url{https://github.com/PolyUDavid/VRCI_Commander_Center}},
   note={Dataset version 1.0.0, 2000 samples}
 }
 ```
@@ -320,7 +320,7 @@ If you use this dataset, please cite:
 
 For questions, issues, or data requests:
 - **Email**: admin@gy4k.com
-- **GitHub Issues**: https://github.com/yourusername/vrci-platform/issues
+- **GitHub Issues**: https://github.com/PolyUDavid/VRCI_Commander_Center/issues
 
 ---
 

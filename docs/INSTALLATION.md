@@ -83,7 +83,7 @@ For detailed data generation methodology, see `backend/training/generate_trainin
 ### Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/vrci-platform.git
+git clone https://github.com/PolyUDavid/VRCI_Commander_Center.git
 cd vrci-platform
 ```
 
@@ -496,7 +496,7 @@ After successful installation:
 
 If you encounter issues not covered here:
 
-1. **Check GitHub Issues**: https://github.com/yourusername/vrci-platform/issues
+1. **Check GitHub Issues**: https://github.com/PolyUDavid/VRCI_Commander_Center/issues
 2. **Email Support**: admin@gy4k.com
 3. **Documentation**: See `docs/` folder for more guides
 

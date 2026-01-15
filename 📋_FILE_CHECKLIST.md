@@ -86,7 +86,7 @@
    - Screenshot 5: Consensus Model → `docs/screenshots/05_consensus_model.png`
 
 4. **Update GitHub URL**:
-   - Find: `https://github.com/yourusername/vrci-platform`
+   - Find: `https://github.com/PolyUDavid/VRCI_Commander_Center`
    - Replace with: Your actual GitHub URL
    - Files: `README.md`, `PROJECT_SUMMARY.md`, all docs
 

@@ -82,7 +82,7 @@ The VRCI platform is designed with reproducibility as a core principle. All expe
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/vrci-platform.git
+git clone https://github.com/PolyUDavid/VRCI_Commander_Center.git
 cd vrci-platform
 
 # Create virtual environment
@@ -560,8 +560,8 @@ If you successfully reproduce results, please cite:
 
 For reproduction support:
 - **Email**: admin@gy4k.com
-- **GitHub Issues**: https://github.com/yourusername/vrci-platform/issues
-- **Discussion Forum**: https://github.com/yourusername/vrci-platform/discussions
+- **GitHub Issues**: https://github.com/PolyUDavid/VRCI_Commander_Center/issues
+- **Discussion Forum**: https://github.com/PolyUDavid/VRCI_Commander_Center/discussions
 
 ---
 

@@ -96,7 +96,7 @@ The platform integrates five state-of-the-art deep learning models with mathemat
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/vrci-platform.git
+git clone https://github.com/PolyUDavid/VRCI_Commander_Center.git
 cd vrci-platform
 
 # 2. Create virtual environment
@@ -593,7 +593,7 @@ If you use this platform in your research, please cite our paper:
   volume={XX},
   pages={XXX-XXX},
   doi={10.1016/j.scs.2026.XXXXX},
-  note={Code and data available at: https://github.com/yourusername/vrci-platform}
+  note={Code and data available at: https://github.com/PolyUDavid/VRCI_Commander_Center}
 }
 ```
 
@@ -613,9 +613,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Paper**: [Link to paper when published]
 
 For questions, issues, or collaboration inquiries, please:
-1. Open an issue on GitHub: [Issues](https://github.com/yourusername/vrci-platform/issues)
+1. Open an issue on GitHub: [Issues](https://github.com/PolyUDavid/VRCI_Commander_Center/issues)
 2. Email: admin@gy4k.com
-3. Discussion forum: [Discussions](https://github.com/yourusername/vrci-platform/discussions)
+3. Discussion forum: [Discussions](https://github.com/PolyUDavid/VRCI_Commander_Center/discussions)
 
 ---
 

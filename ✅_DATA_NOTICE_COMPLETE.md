@@ -171,7 +171,7 @@ train_*_model.py files
 
 Consistently listed across all files:
 - **Email**: admin@gy4k.com
-- **GitHub**: https://github.com/yourusername/vrci-platform
+- **GitHub**: https://github.com/PolyUDavid/VRCI_Commander_Center
 - **Response Time**: Usually within 24-48 hours
 
 ---

@@ -165,7 +165,7 @@ cp ../backend/scalers/*.pkl backend/scalers/
    - Name them: `01_command_center.png`, `02_energy_model.png`, etc.
 
 3. **Update GitHub URL**:
-   - Replace `https://github.com/yourusername/vrci-platform` with actual URL
+   - Replace `https://github.com/PolyUDavid/VRCI_Commander_Center` with actual URL
    - Files to update: `README.md`, `PROJECT_SUMMARY.md`, all docs
 
 4. **Update Author Name**:

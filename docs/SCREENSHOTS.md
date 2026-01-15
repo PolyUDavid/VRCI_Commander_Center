@@ -389,7 +389,7 @@ Architecture of the Carbon-LightTS model for 10-year lifecycle carbon prediction
 
 For questions, issues, or access to high-resolution screenshots:
 - **Email**: admin@gy4k.com
-- **GitHub**: https://github.com/yourusername/vrci-platform
+- **GitHub**: https://github.com/PolyUDavid/VRCI_Commander_Center
 - **Paper**: Submitted to *Sustainable Cities and Society*
 
 ---
