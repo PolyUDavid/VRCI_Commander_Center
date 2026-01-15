@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the complete experimental validation platform for **Decentralized Vehicle-Road-Cloud Integration (VRCI)** systems, developed to support the research paper submitted to *Sustainable Cities and Society*.
+This repository contains the complete experimental validation platform for **Decentralized Vehicle-Road-Cloud Integration (VRCI)** systems, developed to support the research paper in academic review.
 
 **Author**: VRCI Research Team  
 **Contact**: admin@gy4k.com  
@@ -265,7 +265,7 @@ If you use this platform in your research, please cite:
 @article{vrci2026,
   title={Decentralizing Vehicle-Road-Cloud Integration: A Feasibility Study with AI-Enhanced Validation Platform and Sustainability Assessment},
   author={[Your Name]},
-  journal={Sustainable Cities and Society},
+  journal={academic journal},
   year={2026},
   volume={XX},
   pages={XXX-XXX},
@@ -306,7 +306,7 @@ This research was made possible by:
 - **Computational Resources**: NVIDIA RTX 4090 + Intel i9-14900K hardware platform
 - **Open-Source Communities**: PyTorch, FastAPI, ECharts, scikit-learn
 - **Standards Organizations**: 3GPP, ETSI, IEEE for VRCI specifications
-- **Reviewers**: Anonymous reviewers from *Sustainable Cities and Society*
+- **Reviewers**: Anonymous reviewers from *academic journal*
 
 ---
 
@@ -350,7 +350,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Last Updated**: January 15, 2026  
 **Platform Version**: 1.0.0  
-**Paper Status**: Submitted to *Sustainable Cities and Society*  
+**Paper Status**: Submitted to *academic journal*  
 **Repository**: https://github.com/PolyUDavid/VRCI_Commander_Center
 
 ---

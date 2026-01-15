@@ -1,6 +1,6 @@
 # VRCI Platform Reproducibility Guide
 
-This document provides detailed instructions for reproducing all experimental results reported in the research paper submitted to *Sustainable Cities and Society*.
+This document provides detailed instructions for reproducing all experimental results reported in the research paper in academic review.
 
 **Contact**: admin@gy4k.com  
 **Last Updated**: January 15, 2026  
@@ -548,7 +548,7 @@ If you successfully reproduce results, please cite:
 @article{vrci2026,
   title={Decentralizing Vehicle-Road-Cloud Integration: A Feasibility Study with AI-Enhanced Validation Platform},
   author={[Your Name]},
-  journal={Sustainable Cities and Society},
+  journal={academic journal},
   year={2026},
   note={Reproduced using VRCI Platform v1.0.0}
 }

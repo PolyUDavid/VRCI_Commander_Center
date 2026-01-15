@@ -145,7 +145,7 @@ git push
   ```
   Complete experimental platform for validating decentralized VRCI feasibility. 
   5 AI models (12.6M params), interactive dashboard, Monte Carlo validation. 
-  Paper submitted to Sustainable Cities and Society.
+  Research paper.
   ```
 - **Website**: (可选) 留空或填入论文链接
 - **Topics**: 

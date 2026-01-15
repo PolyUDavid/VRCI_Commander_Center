@@ -248,7 +248,7 @@ def save_dataset(dataset, output_dir='../data'):
                 'generated': timestamp,
                 'sample_count': len(dataset),
                 'contact': 'admin@gy4k.com',
-                'paper': 'Submitted to Sustainable Cities and Society'
+                'paper': 'Submitted to academic journal'
             },
             'data': dataset
         }, f, indent=2)

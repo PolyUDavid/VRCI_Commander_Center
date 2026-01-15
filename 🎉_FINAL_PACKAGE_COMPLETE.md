@@ -381,7 +381,7 @@ cd backend
 
 - **Email**: admin@gy4k.com
 - **GitHub**: https://github.com/YOUR_USERNAME/vrci-platform
-- **Paper**: Submitted to *Sustainable Cities and Society*
+- **Paper**: Submitted to *academic journal*
 
 ### 🔍 **获取帮助 / Get Help**
 

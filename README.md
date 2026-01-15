@@ -9,7 +9,7 @@
 This repository contains the complete experimental platform for validating the feasibility of decentralized Vehicle-Road-Cloud Integration (VRCI) systems, as presented in our research paper:
 
 > **"Decentralizing Vehicle-Road-Cloud Integration: A Feasibility Study with AI-Enhanced Validation Platform and Sustainability Assessment"**  
-> *Submitted to Sustainable Cities and Society*
+> *Research Paper*
 
 The platform integrates five state-of-the-art deep learning models with mathematical feasibility analysis to provide quantitative validation of:
 - **67.3% latency reduction** (centralized vs. decentralized architectures)
@@ -17,6 +17,50 @@ The platform integrates five state-of-the-art deep learning models with mathemat
 - **95.7% spatiotemporal coverage** (multi-modal sensor fusion: RSU + UAV + Vehicle)
 - **96.9% consensus mechanism selection accuracy** (PBFT, DPoS, PoS, PoW)
 - **2.0-2.5 kt CO₂ net savings over 10 years** (12-month carbon payback period)
+
+---
+
+## 📸 Platform Screenshots
+
+<div align="center">
+
+### Command Center - Real-time Monitoring Dashboard
+![Command Center](docs/screenshots/01_command_center.png)
+*3D geographic coverage map with real-time KPIs and network status visualization*
+
+---
+
+### AI Model Architecture Visualization
+<table>
+  <tr>
+    <td width="50%">
+      <img src="docs/screenshots/02_energy_model.png" alt="Energy Model">
+      <p align="center"><em>Energy-RWKV Model Architecture</em></p>
+    </td>
+    <td width="50%">
+      <img src="docs/screenshots/03_latency_model.png" alt="Latency Model">
+      <p align="center"><em>Latency-LSTM Model Architecture</em></p>
+    </td>
+  </tr>
+</table>
+
+---
+
+### Interactive Simulation & Validation
+<table>
+  <tr>
+    <td width="50%">
+      <img src="docs/screenshots/04_simulation.png" alt="Simulation Dashboard">
+      <p align="center"><em>Parameter Adjustment & Monte Carlo Validation</em></p>
+    </td>
+    <td width="50%">
+      <img src="docs/screenshots/05_consensus_model.png" alt="Consensus Model">
+      <p align="center"><em>Consensus Mechanism Selection Interface</em></p>
+    </td>
+  </tr>
+</table>
+
+</div>
 
 ---
 
@@ -588,7 +632,7 @@ If you use this platform in your research, please cite our paper:
 @article{author2026vrci,
   title={Decentralizing Vehicle-Road-Cloud Integration: A Feasibility Study with AI-Enhanced Validation Platform and Sustainability Assessment},
   author={[Your Name]},
-  journal={Sustainable Cities and Society},
+  journal={academic journal},
   year={2026},
   volume={XX},
   pages={XXX-XXX},
@@ -643,4 +687,4 @@ This research was supported by:
 
 **Last Updated**: January 15, 2026  
 **Platform Version**: 1.0.0  
-**Paper Status**: Submitted to *Sustainable Cities and Society*
+**Paper Status**: Submitted to *academic journal*

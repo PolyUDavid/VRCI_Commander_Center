@@ -254,7 +254,7 @@ git push -u origin main
 
 2. **Add Description**:
    ```
-   AI-Enhanced Experimental Platform for Decentralized Vehicle-Road-Cloud Integration (VRCI) - Validates 67.3% latency reduction, 42.7% energy savings, 95.7% coverage rate. Submitted to Sustainable Cities and Society.
+   AI-Enhanced Experimental Platform for Decentralized Vehicle-Road-Cloud Integration (VRCI) - Validates 67.3% latency reduction, 42.7% energy savings, 95.7% coverage rate. Research Paper.
    ```
 
 3. **Enable Issues**: ✓ (for community support)
@@ -299,7 +299,7 @@ git push -u origin main
    admin@gy4k.com
 
    ### Citation
-   Paper submitted to *Sustainable Cities and Society*
+   Paper in academic review
    ```
 
 ---
